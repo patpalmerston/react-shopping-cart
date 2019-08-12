@@ -10,6 +10,8 @@ import Navigation from './components/Navigation';
 import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
 
+// will come back and add notes when I get time but should be mvp
+
 function App() {
 	const [products] = useState(data);
 	const [cart, setCart] = useState([]);
@@ -20,7 +22,7 @@ function App() {
 
 	return (
 		<ProductContext.Provider value={{ products, addItem }}>
-			<CartContext.Provider value={ cart }>
+			<CartContext.Provider value={cart}>
 				<CartContext.Provider />
 
 				<div className='App'>
@@ -29,7 +31,7 @@ function App() {
 					{/* Routes */}
 					<Route exact path='/' component={Products} />
 
-					<Route path='/cart' component={ShoppingCart}/>
+					<Route path='/cart' component={ShoppingCart} />
 				</div>
 			</CartContext.Provider>
 		</ProductContext.Provider>
